@@ -7,7 +7,7 @@ import logging
 from time import time
 from datetime import datetime
 from os import makedirs, path as ospath, system
-import OWNER, colab_bot, DUMP_ID
+from Test import OWNER, colab_bot, DUMP_ID
 from Test.Main.manager import calDownSize, get_d_name, downloadManager
 from Test.utility.helper import getSize, applyCustomName, keyboard, sysINFO
 from Test.utility.handler import (
