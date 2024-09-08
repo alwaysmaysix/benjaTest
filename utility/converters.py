@@ -11,8 +11,8 @@ from threading import Thread
 from datetime import datetime
 from os import makedirs, path as ospath
 from moviepy.editor import VideoFileClip as VideoClip
-from colab_leecher.utility.variables import BOT, MSG, BotTimes, Paths, Messages
-from colab_leecher.utility.helper import (
+from utility.variables import BOT, MSG, BotTimes, Paths, Messages
+from utility.helper import (
     getSize,
     keyboard,
     multipartArchive,
