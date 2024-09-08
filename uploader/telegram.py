@@ -5,8 +5,8 @@ from os import path as ospath
 from datetime import datetime
 from pyrogram.errors import FloodWait
 from uuid import uuid4
-from colab_leecher.utility.variables import BOT, Transfer, BotTimes, Messages, MSG, Paths
-from colab_leecher.utility.helper import sizeUnit, fileType, getTime, status_bar, thumbMaintainer, videoExtFix
+from utility.variables import BOT, Transfer, BotTimes, Messages, MSG, Paths
+from utility.helper import sizeUnit, fileType, getTime, status_bar, thumbMaintainer, videoExtFix
 
 async def progress_bar(current, total):
     global status_msg, status_head
