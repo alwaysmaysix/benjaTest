@@ -7,7 +7,7 @@ import logging
 import pathlib
 from asyncio import sleep
 from time import time
-from colab_leecher import OWNER, colab_bot
+from Test import OWNER, colab_bot
 from natsort import natsorted
 from datetime import datetime
 from os import makedirs, path as ospath
