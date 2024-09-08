@@ -11,7 +11,7 @@ from colab_leecher import OWNER, colab_bot
 from natsort import natsorted
 from datetime import datetime
 from os import makedirs, path as ospath
-from colab_leecher.uploader.telegram import upload_file
+from uploader.telegram import upload_file
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from utility.variables import (
     BOT,
