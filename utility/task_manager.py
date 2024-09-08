@@ -7,10 +7,10 @@ import logging
 from time import time
 from datetime import datetime
 from os import makedirs, path as ospath, system
-from colab_leecher import OWNER, colab_bot, DUMP_ID
-from colab_leecher.downlader.manager import calDownSize, get_d_name, downloadManager
-from colab_leecher.utility.helper import getSize, applyCustomName, keyboard, sysINFO
-from colab_leecher.utility.handler import (
+import OWNER, colab_bot, DUMP_ID
+from Main.manager import calDownSize, get_d_name, downloadManager
+from utility.helper import getSize, applyCustomName, keyboard, sysINFO
+from utility.handler import (
     Leech,
     Unzip_Handler,
     Zip_Handler,
