@@ -13,7 +13,7 @@ from datetime import datetime
 from os import makedirs, path as ospath
 from uploader.telegram import upload_file
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
-from utility.variables import (
+from Test.utility.variables import (
     BOT,
     MSG,
     BotTimes,
