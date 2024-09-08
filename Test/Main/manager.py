@@ -6,11 +6,11 @@ from natsort import natsorted
 from datetime import datetime
 from asyncio import sleep
 from concurrent.futures import ThreadPoolExecutor
-from Main.jpg4.main import download_images as download_jpg4
-from Main.cyberdrop.main import download_videos as download_cyberdrop
-from Main.saint2.main import download_videos as download_saint2
-from utility.helper import isTaskComplete, keyboard, sysINFO
-from utility.variables import BOT, Transfer, MSG, Messages, BotTimes
+from Test.Main.jpg4.main import download_images as download_jpg4
+from Test.Main.cyberdrop.main import download_videos as download_cyberdrop
+from Test.Main.saint2.main import download_videos as download_saint2
+from Test.utility.helper import isTaskComplete, keyboard, sysINFO
+from Test.utility.variables import BOT, Transfer, MSG, Messages, BotTimes
 
 async def downloadManager(user_input, downloader_type):
     """
