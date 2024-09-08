@@ -3,9 +3,9 @@
 import logging, os
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
-from Main.manager import downloadManager
-from utility.variables import BOT, MSG, Messages, BotTimes
-from asyncio import get_event_loop
+from Test.Main.manager import downloadManager
+from Test.utility.variables import BOT, MSG, Messages, BotTimes
+from Test.asyncio import get_event_loop
 
 app = Client("download_bot")
 
