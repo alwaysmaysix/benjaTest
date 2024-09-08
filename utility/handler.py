@@ -13,7 +13,7 @@ from datetime import datetime
 from os import makedirs, path as ospath
 from colab_leecher.uploader.telegram import upload_file
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
-from colab_leecher.utility.variables import (
+from utility.variables import (
     BOT,
     MSG,
     BotTimes,
