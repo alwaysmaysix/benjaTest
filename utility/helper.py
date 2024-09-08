@@ -14,7 +14,7 @@ from asyncio import get_event_loop
 from pyrogram.errors import BadRequest
 from moviepy.video.io.VideoFileClip import VideoFileClip
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, InputMediaPhoto
-from colab_leecher.utility.variables import (
+from utility.variables import (
     BOT,
     MSG,
     BotTimes,
