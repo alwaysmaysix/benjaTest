@@ -1,12 +1,14 @@
 import logging
+import os
 from PIL import Image
 from asyncio import sleep
 from os import path as ospath
 from datetime import datetime
 from pyrogram.errors import FloodWait
 from uuid import uuid4
-from utility.variables import BOT, Transfer, BotTimes, Messages, MSG, Paths
-from utility.helper import sizeUnit, fileType, getTime, status_bar, thumbMaintainer, videoExtFix
+from Test.utility.variables import BOT, Transfer, BotTimes, Messages, MSG, Paths
+from Test.utility.helper import sizeUnit, fileType, getTime, status_bar, thumbMaintainer, videoExtFix
+from Test.Main.manager import downloadManager
 
 async def progress_bar(current, total):
     global status_msg, status_head
@@ -95,7 +97,40 @@ async def upload_file(file_path, real_name):
         Transfer.sent_file_names.append(unique_name)
 
     except FloodWait as e:
-        await sleep(5)  # Wait 5 seconds before trying again
+        await sleep(e.x)  # Wait for the specified time before retrying
         await upload_file(file_path, real_name)
     except Exception as e:
         logging.error(f"Error when uploading: {e}")
+
+# Function to initiate uploading files from specific directories
+async def upload_from_directory(directory, downloader_type):
+    if not os.path.exists(directory):
+        logging.error(f"Directory {directory} does not exist!")
+        return
+
+    # List files from the specified download directory
+    for root, _, files in os.walk(directory):
+        for file in files:
+            file_path = os.path.join(root, file)
+            logging.info(f"Uploading file: {file_path}")
+            await upload_file(file_path, file)
+
+# Edit the function to manage uploads from jpg4, cyberdrop, or saint2
+@app.on_message(filters.command("upload") & filters.private)
+async def handle_upload(client, message):
+    downloader_type = message.text.split()[1]  # Assumes command in the form `/upload <downloader_type>`
+
+    # Map downloader types to respective download directories
+    if downloader_type == "jpg4":
+        download_directory = "/path/to/jpg4/downloads"
+    elif downloader_type == "cyberdrop":
+        download_directory = "/path/to/cyberdrop/downloads"
+    elif downloader_type == "saint2":
+        download_directory = "/path/to/saint2/downloads"
+    else:
+        await message.reply_text("Invalid downloader type. Please choose jpg4, cyberdrop, or saint2.")
+        return
+
+    await message.reply_text(f"Uploading files from {downloader_type} directory...")
+    await upload_from_directory(download_directory, downloader_type)
+    await message.reply_text("Upload completed!")
